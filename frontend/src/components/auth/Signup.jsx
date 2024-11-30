@@ -38,7 +38,7 @@ const Signup = () => {
     e.preventDefault();
 
     if (!input.file) {
-      toast.error('Please upload file.');
+      toast.error('Please upload resume or company logo.');
       return;
     }
 
@@ -130,7 +130,7 @@ const Signup = () => {
           <div className="mb-4 flex flex-col sm:flex-row items-start gap-4">
             <Label>Role</Label>
             <RadioGroup className="flex flex-col sm:flex-row items-center gap-4 mt-2">
-              <div className="flex items-center space-x-1">
+              <div className="flex items-center space-x-2">
                 <Input
                   type="radio"
                   name="role"
@@ -141,7 +141,7 @@ const Signup = () => {
                 />
                 <Label>Student</Label>
               </div>
-              <div className="flex items-center space-x-1">
+              <div className="flex items-center space-x-2">
                 <Input
                   type="radio"
                   name="role"
