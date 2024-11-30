@@ -38,7 +38,7 @@ const Signup = () => {
     e.preventDefault();
 
     if (!input.file) {
-      toast.error('Please upload a profile image.');
+      toast.error('Please upload file.');
       return;
     }
 
@@ -155,7 +155,7 @@ const Signup = () => {
             </RadioGroup>
           </div>
           <div className="mb-6">
-            <Label>Profile Picture</Label>
+            <Label>File</Label>
             <Input
               accept="image/*"
               type="file"
