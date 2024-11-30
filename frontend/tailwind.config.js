@@ -11,9 +11,16 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: "1rem", // Default padding for mobile
+        sm: "2rem",      // Increased padding for small screens and above
+      },
       screens: {
-        "2xl": "1400px", // Max container size for 2xl screens
+        sm: "640px",     // Small screens
+        md: "768px",     // Medium screens
+        lg: "1024px",    // Large screens
+        xl: "1280px",    // Extra large screens
+        "2xl": "1400px", // Maximum container size
       },
     },
     extend: {
@@ -51,7 +58,6 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Add your custom colors here
         'primary-variant-dark': 'hsl(210, 50%, 30%)',   // Custom dark variant primary
         'secondary-variant-dark': 'hsl(215, 25%, 60%)', // Custom dark variant secondary
         'primary-foreground-dark': 'hsl(222.2, 47.4%, 11.2%)', // Custom foreground in dark mode
@@ -79,5 +85,8 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-}
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/aspect-ratio"), // Plugin for maintaining responsive aspect ratios
+  ],
+};
