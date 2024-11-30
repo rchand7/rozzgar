@@ -75,14 +75,14 @@ const Signup = () => {
   }, [user, navigate]);
 
   return (
-    <div>
+    <div className="flex items-center justify-center min-h-screen max-w-7xl mx-auto p-4">
       <Navbar />
-      <div className="flex items-center justify-center max-w-7xl mx-auto p-4">
+      <div className="w-full">
         <form
           onSubmit={submitHandler}
-          className="w-full max-w-md bg-white border border-gray-200 shadow-md rounded-md p-6"
+          className="w-full max-w-md bg-white border border-gray-200 shadow-md rounded-md p-6 mx-auto"
         >
-          <h1 className="font-bold text-2xl text-center mb-5">Sign Up</h1>
+          <h1 className="font-bold text-xl sm:text-2xl text-center mb-5">Sign Up</h1>
           <div className="mb-4">
             <Label>Full Name</Label>
             <Input
@@ -127,10 +127,10 @@ const Signup = () => {
               className="w-full"
             />
           </div>
-          <div className="mb-4 flex flex-col">
+          <div className="mb-4 flex flex-col sm:flex-row items-start gap-4">
             <Label>Role</Label>
-            <RadioGroup className="flex items-center gap-4 mt-2">
-              <div className="flex items-center space-x-2">
+            <RadioGroup className="flex flex-col sm:flex-row items-center gap-4 mt-2">
+              <div className="flex items-center space-x-1">
                 <Input
                   type="radio"
                   name="role"
@@ -141,7 +141,7 @@ const Signup = () => {
                 />
                 <Label>Student</Label>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-1">
                 <Input
                   type="radio"
                   name="role"
@@ -160,7 +160,7 @@ const Signup = () => {
               accept="image/*"
               type="file"
               onChange={changeFileHandler}
-              className="cursor-pointer"
+              className="cursor-pointer w-full"
             />
           </div>
           {loading ? (
@@ -185,4 +185,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
