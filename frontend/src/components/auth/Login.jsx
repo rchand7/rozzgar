@@ -82,7 +82,7 @@ const Login = () => {
                     </div>
                     <div className='flex items-center justify-between'>
                         <RadioGroup className="flex items-center gap-4 my-5">
-                            <div className="flex items-center space-x-2">
+                            <div className="flex items-center space-x-1">
                                 <Input
                                     type="radio"
                                     name="role"
@@ -93,7 +93,7 @@ const Login = () => {
                                 />
                                 <Label htmlFor="r1">Student</Label>
                             </div>
-                            <div className="flex items-center space-x-2">
+                            <div className="flex items-center space-x-1">
                                 <Input
                                     type="radio"
                                     name="role"
