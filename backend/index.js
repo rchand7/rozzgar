@@ -21,7 +21,7 @@ app.use(cookieParser());
 
 // CORS Configuration
 const corsOptions = {
-  origin: 'http://rozzgar.shop', // Removed trailing slash
+  origin: 'https://rozzgar.shop', // Removed trailing slash
   credentials: true, // Allow cookies and credentials
 };
 app.use(cors(corsOptions));
