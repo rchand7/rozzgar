@@ -20,10 +20,23 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // CORS Configuration
+const allowedOrigins = [
+  'https://rozzgar.shop',
+  'https://www.rozzgar.shop',
+];
+
 const corsOptions = {
-  origin: 'https://rozzgar.shop', // Removed trailing slash
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true); // Allow the request
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true, // Allow cookies and credentials
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
 };
+
 app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 8000;
